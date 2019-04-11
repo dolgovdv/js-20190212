@@ -1,15 +1,17 @@
 import { Block } from '../block';
 import template from './textbox.pug';
+/* eslint-disable */
 import _ from './textbox.scss';
+/* eslint-enable */
 
 export class Textbox extends Block {
-
-  template(data) {
+  get bemName () {
+    return 'textbox';
+  }
+  template (data) {
     return template(data);
   }
-
-  constructor(...args) {
-    super(...args);
+  get value () {
+    return this.getElement('input').value;
   }
-
 }

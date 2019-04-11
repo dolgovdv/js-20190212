@@ -15,19 +15,22 @@
       (function () {
         'use strict';
 
-        const textbox = new Textbox(document.querySelector('.js-textbox'), {
+        const textbox = new Textbox({
+          name: 'test',
           label: 'Пример активного текстбокса',
-          value: 'hello world'
+          value: 'hello world',
+          required: true
         });
 
-        const textbox2 = new Textbox(document.querySelector('.js-textbox-disabled'), {
+        const textbox2 = new Textbox({
+          name: 'test2',
           label: 'Пример активного текстбокса',
           value: 'hello world',
           mod: ['disabled']
         });
 
-        textbox.render();
-        textbox2.render();
+        textbox.render(document.querySelector('.js-textbox'));
+        textbox2.render(document.querySelector('.js-textbox-disabled'));
       })();
 
     </script>
