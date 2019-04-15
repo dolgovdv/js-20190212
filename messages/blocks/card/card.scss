@@ -3,9 +3,9 @@
 
 .card {
   display: flex;
-  max-width: 300px;
+
   padding: 8px 12px;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid darken(#FAF9F8, 5%);
 
 
   &:first-child {
@@ -33,7 +33,7 @@
   &__content {
     flex: 1;
     min-width: 0;
-    h3 {
+    h5 {
       margin: 0 0 4px;
 
       white-space: nowrap;
@@ -44,5 +44,6 @@
       margin: 0;
       line-height: 1.4;
     }
+
   }
 }
