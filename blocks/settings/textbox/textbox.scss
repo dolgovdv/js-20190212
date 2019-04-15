@@ -1,0 +1,14 @@
+.textbox {
+  &__input {}
+}
+
+.required{
+  color: red;
+  margin-left: .5rem;
+}
+
+label{
+  display: inline-block !important;
+  margin-right: .5rem;
+  margin-top: .4rem;
+}

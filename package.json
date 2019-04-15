@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack-cli --watch",
+    "build:settings": "webpack-cli --config ./webpack.settings.config.js --mode development --watch",
     "lint": "eslint ./blocks/**/*.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
