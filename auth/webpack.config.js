@@ -1,7 +1,7 @@
 module.exports = {
-  entry: './blocks/auth/index.js',
+  entry: './auth.js',
   output: {
-    filename: 'toolkit.js'
+    filename: 'auth.js'
   },
   devtool: 'eval-source-map',
   module: {

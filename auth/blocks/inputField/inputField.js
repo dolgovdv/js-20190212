@@ -1,19 +1,19 @@
 import {
   Block
-} from '../../../block';
+} from '../../../blocks/block';
 import template from './inputField.pug';
 /* eslint-disable */
 import _ from './inputField.scss';
 /* eslint-enable */
 
 export class InputField extends Block {
-  get bemName() {
+  get bemName () {
     return 'inputField';
   }
-  template(data) {
+  template (data) {
     return template(data);
   }
-  get value() {
+  get value () {
     return this.getElement('input').value;
   }
 }
