@@ -45,5 +45,8 @@
   "pre-commit": [
     "lint",
     "lint:messages"
-  ]
+  ],
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.8.1"
+  }
 }
