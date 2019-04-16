@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>простая форма ввода номера</title>
+    <script src="../../dist/toolkit.js"></script>
+</head>
+<body>
+<h1>Простой вариант формы для ввода телефонного номера</h1>
+<div class="js-phonenumber"></div>
+
+<script>
+
+    (function () {
+        'use strict';
+
+        const sunnyPhone = new Phonenumber();
+
+        sunnyPhone.render(document.querySelector('.js-phonenumber'));
+    })();
+</script>
+</body>
+</html>
