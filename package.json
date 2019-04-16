@@ -7,7 +7,7 @@
     "build": "webpack-cli --watch",
     "build:auth": "cd auth && webpack-cli --watch",
     "lint": "eslint ./blocks/**/*.js",
-    "lint:auth": "eslint ./auth/blocks/**/*.js",
+    "lint:auth": "eslint --fix --ext .js auth/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
