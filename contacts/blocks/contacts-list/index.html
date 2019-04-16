@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Карточка контакта</title>
+    <script src="../../../dist/contacts.js"></script>
+    <link href="../../../libs/bemskel.min.css" rel="stylesheet"/>
+</head>
+<body>
+
+    <div class="js-contacts-list"></div>
+
+    <script>
+      (function () {
+        'use strict';
+
+        const contactsList = new ContactsList();
+        contactsList.render(document.querySelector('.js-contacts-list'));
+      })();
+
+    </script>
+
+</body>
+</html>
