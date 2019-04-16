@@ -12,12 +12,10 @@ export class PhoneField extends Block {
     return template(data);
   }
   get value () {
-    console.log('ddddd', this)
     return this.getElement('input').value;
   }
 
   set value (value) {
-    console.log('ddddd', this.getElement('input').value)
     this.getElement('input').value = value;
   }
 }

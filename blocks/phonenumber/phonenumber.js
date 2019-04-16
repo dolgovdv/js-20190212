@@ -29,7 +29,6 @@ export class Phonenumber extends Block {
 
     this.el.querySelector('form').addEventListener('submit', event => {
       event.preventDefault();
-      console.log(this.phonenumber.value);
     })
 
     this.el.querySelector('input').addEventListener('blur', event => {
@@ -41,7 +40,7 @@ export class Phonenumber extends Block {
       }
 
       this.el.querySelector('input').classList.add('error');
-      let spanMassage = document.body.querySelector('.pure-form-message-inline');
+      let spanMassage = this.el.querySelector('.pure-form-message-inline');
       spanMassage.textContent = 'invalid phone number'
       spanMassage.classList.add('error')
       event.preventDefault();
@@ -49,7 +48,7 @@ export class Phonenumber extends Block {
 
     this.el.querySelector('input').addEventListener('focus', () => {
       this.el.querySelector('input').classList.remove('error');
-      let spanMassage = document.body.querySelector('.pure-form-message-inline');
+      let spanMassage = this.el.querySelector('.pure-form-message-inline');
       spanMassage.textContent = 'Обязательное поле'
       spanMassage.classList.remove('error')
     })
@@ -72,11 +71,9 @@ export class Phonenumber extends Block {
 
     this.el.querySelector('input').addEventListener('keyup', event => {
       if (event.ctrlKey || event.altKey || event.metaKey) return;
-      console.log('back', event.key)
       let number = this.phonenumber.value.replace(/\D/g, '').split('')
       let l = number.length;
       if (number[0] === '8') {
-        console.log('if', number)
         number[0] = '7';
       }
       if (l >= 1) {
