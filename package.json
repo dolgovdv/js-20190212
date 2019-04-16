@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "auth": "webpack-cli --watch --config ./auth/webpack.config.js",
     "build": "webpack-cli --watch",
     "lint": "eslint ./blocks/**/*.js",
     "test": "echo \"Error: no test specified\" && exit 1"
