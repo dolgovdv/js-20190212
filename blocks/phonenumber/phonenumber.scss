@@ -1,0 +1,13 @@
+.pure-form {
+  input.textbox__input{
+    color: #0078e7;
+
+  }
+  input.error {
+    border:  1px solid #b94a48;
+    background-color: rgba(185, 74,72, .5);
+  }
+  span.error {
+    color: #b94a48;
+  }
+}
