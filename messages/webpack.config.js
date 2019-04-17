@@ -1,7 +1,7 @@
 const path = require('path')
 
 module.exports = {
-  entry: './messages.js',
+  entry: path.resolve('./messages.js'),
   output: {
     path: path.resolve('./dist'),
     filename: 'messages.js'
