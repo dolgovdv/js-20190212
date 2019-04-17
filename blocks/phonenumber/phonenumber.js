@@ -16,6 +16,7 @@ export class Phonenumber extends Block {
 
   constructor (options) {
     super(options);
+    this.isError = true;
 
     this.phonenumber = new PhoneField({
       name: 'phonenumber',
@@ -42,18 +43,21 @@ export class Phonenumber extends Block {
         return;
       }
 
-      this.el.querySelector('input').classList.add('error');
+      this.el.querySelector('input').classList.add('errorPhone');
       let spanMassage = this.el.querySelector('.form-message-inline');
       spanMassage.textContent = 'invalid phone number'
-      spanMassage.classList.add('error')
+      spanMassage.classList.add('errorPhone')
+      this.isError = true;
+      console.log(this.isError)
       event.preventDefault();
     })
 
     this.el.querySelector('input').addEventListener('focus', () => {
-      this.el.querySelector('input').classList.remove('error');
+      this.el.querySelector('input').classList.remove('errorPhone');
       let spanMassage = this.el.querySelector('.form-message-inline');
       spanMassage.textContent = 'Обязательное поле'
-      spanMassage.classList.remove('error')
+      spanMassage.classList.remove('errorPhone')
+      this.isError = false;
     })
 
     this.el.querySelector('input').addEventListener('keydown', event => {
@@ -90,6 +94,7 @@ export class Phonenumber extends Block {
     this.el.querySelector('form').addEventListener('submit', event => {
       event.preventDefault();
       console.log(this.phonenumber.value);
+      console.log(this.isError)
     })
   }
 }
