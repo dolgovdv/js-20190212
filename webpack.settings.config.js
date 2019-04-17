@@ -1,5 +1,5 @@
 module.exports = {
-  entry: './blocks/settings/index.js',
+  entry: './settings/blocks/index.js',
   output: {
     filename: 'toolkit_settings.js'
   },
