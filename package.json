@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack-cli --watch",
+    "build:auth": "cd auth && webpack-cli --watch",
+    "build:contacts": "webpack-cli --watch --config ./contacts/webpack.config.js",
     "lint": "eslint ./blocks/**/*.js",
+    "lint:auth": "eslint --fix --ext .js auth/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -41,6 +44,7 @@
     "webpack-cli": "^3.3.0"
   },
   "pre-commit": [
-    "lint"
+    "lint",
+    "lint:auth"
   ]
 }

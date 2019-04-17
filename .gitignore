@@ -1,3 +1,8 @@
+# rules auth
+auth/dist/auth.js
+#################
 .idea
 node_modules
 package-lock.json
+CNAME
+.DS_Store

@@ -1,7 +1,12 @@
+const path = require('path');
+
+console.log(path.resolve('./dist'));
+
 module.exports = {
-  entry: './blocks/index.js',
+  entry: path.resolve('./contacts/contacts.js'),
   output: {
-    filename: 'toolkit.js'
+    path: path.resolve('./dist'),
+    filename: 'contacts.js'
   },
   devtool: 'eval-source-map',
   module: {
@@ -15,7 +20,7 @@ module.exports = {
             presets: ['babel-preset-env']
           }
         }
-      }, {
+      },{
         test: /\.pug$/,
         use: 'pug-loader'
       }, {
@@ -31,3 +36,4 @@ module.exports = {
   }
 
 };
+
