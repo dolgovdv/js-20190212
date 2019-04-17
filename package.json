@@ -6,6 +6,7 @@
   "scripts": {
     "build": "webpack-cli --watch",
     "build:messages": "cd messages && webpack-cli --watch",
+    "build:contacts": "webpack-cli --watch --config ./contacts/webpack.config.js",
     "lint": "eslint ./blocks/**/*.js",
     "lint:messages": "eslint ./messages/blocks/**/*.js",
     "test": "echo \"Error: no test specified\" && exit 1"
