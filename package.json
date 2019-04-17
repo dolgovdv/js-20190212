@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack-cli --watch",
-    "build:settings": "webpack-cli --config ./webpack.settings.config.js --mode development --watch",
+    "build:settings": "webpack-cli --watch --config ./settings/webpack.config.js",
+    "build:contacts": "webpack-cli --watch --config ./contacts/webpack.config.js",
     "lint": "eslint ./blocks/**/*.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -24,9 +25,8 @@
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
     "css-loader": "^1.0.0",
-    "eslint": "^5.0.0",
+    "eslint": "^5.16.0",
     "eslint-plugin-css-modules": "^2.11.0",
-    "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-node": "^7.0.0",
     "eslint-plugin-promise": "^4.0.0",
     "eslint-plugin-standard": "^4.0.0",
@@ -43,5 +43,8 @@
   },
   "pre-commit": [
     "lint"
-  ]
+  ],
+  "devDependencies": {
+    "eslint-plugin-import": "^2.17.1"
+  }
 }
