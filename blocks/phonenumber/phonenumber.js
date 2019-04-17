@@ -9,9 +9,11 @@ export class Phonenumber extends Block {
   get bemName () {
     return 'phonenumber';
   }
+
   template (data) {
     return template(data);
   }
+
   constructor (options) {
     super(options);
 
@@ -23,6 +25,7 @@ export class Phonenumber extends Block {
       required: true
     });
   }
+
   render (el) {
     super.render(el);
     this.phonenumber.render(this.getElement('phonenumber'));
@@ -40,7 +43,7 @@ export class Phonenumber extends Block {
       }
 
       this.el.querySelector('input').classList.add('error');
-      let spanMassage = this.el.querySelector('.pure-form-message-inline');
+      let spanMassage = this.el.querySelector('.form-message-inline');
       spanMassage.textContent = 'invalid phone number'
       spanMassage.classList.add('error')
       event.preventDefault();
@@ -48,7 +51,7 @@ export class Phonenumber extends Block {
 
     this.el.querySelector('input').addEventListener('focus', () => {
       this.el.querySelector('input').classList.remove('error');
-      let spanMassage = this.el.querySelector('.pure-form-message-inline');
+      let spanMassage = this.el.querySelector('.form-message-inline');
       spanMassage.textContent = 'Обязательное поле'
       spanMassage.classList.remove('error')
     })
@@ -58,9 +61,6 @@ export class Phonenumber extends Block {
 
       let chr = event.key;
 
-      // с null надо осторожно в неравенствах,
-      // т.к. например null >= '0' => true
-      // на всякий случай лучше вынести проверку chr == null отдельно
       if (chr == null) return;
 
       if ((chr < '0' || chr > '9') && (chr !== 'Backspace' && chr !== '+')) {

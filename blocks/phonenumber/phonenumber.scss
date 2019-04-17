@@ -1,4 +1,4 @@
-.pure-form {
+.form {
   input.textbox__input{
     color: #0078e7;
 
@@ -9,5 +9,8 @@
   }
   span.error {
     color: #b94a48;
+  }
+  .form-message-inline {
+    padding-left: 10px;
   }
 }
