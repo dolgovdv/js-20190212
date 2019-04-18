@@ -8,6 +8,7 @@
     "build:settings": "webpack-cli --watch --config ./settings/webpack.config.js",
     "build:contacts": "webpack-cli --watch --config ./contacts/webpack.config.js",
     "lint": "eslint ./blocks/**/*.js",
+    "lint:settings": "eslint ./settings/**/*.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
