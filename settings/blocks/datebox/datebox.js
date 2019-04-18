@@ -16,7 +16,6 @@ export class Datebox extends Block {
     template (data) {
       return template(data);
     }
-
     constructor (options) {
         super(options);
         this.datebox = new Textbox({
