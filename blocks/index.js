@@ -1,7 +1,7 @@
 import { Textbox } from './textbox/textbox';
 import { Feedback } from './feedback/feedback';
 import { Phonenumber } from './phonenumber/phonenumber';
-import { Galarey } from './galarey/galarey';
+import { Gallerey } from './galarey/gallerey';
 
 /* eslint-disable */
 import _ from './index.scss';
@@ -10,4 +10,4 @@ import _ from './index.scss';
 window.Textbox = Textbox;
 window.Feedback = Feedback;
 window.Phonenumber = Phonenumber;
-window.Galarey = Galarey;
+window.Gallerey = Gallerey;

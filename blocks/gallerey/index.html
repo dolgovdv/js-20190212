@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>galarey-demo</title>
+    <script src="../../dist/toolkit.js"></script>
+</head>
+
+<body>
+    <h1>Пример простой галареи</h1>
+    <div class="js-gallerey"></div>
+    <script>
+        (function() {
+            'use strict';
+            const myGallerey = new Gallerey({
+                inLine : true, /* в строку */
+                inLineElem : 3,/* кол-во видимых элементов */
+                size : 14/* кол-во элементов */
+            });
+            myGallerey.render(document.querySelector('.js-gallerey'));
+        })();
+    </script>
+</body>
+
+</html>

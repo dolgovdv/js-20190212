@@ -1,0 +1,33 @@
+.inLine {
+  position: relative;
+  width: 900px;
+  height: 300px;
+  transition: all ease 0.5s;
+  overflow: hidden;
+    &__wrap {
+      position: relative;
+      display: flex;
+      left: 0;
+      transition: all ease 0.5s;
+    }
+}
+
+img {
+  max-width: none !important;
+}
+
+.gallerey {
+  display: flex;
+  justify-content: center;
+}
+
+.btn__ {
+  &left {
+    border: 1px solid #c5c2c2;
+    background-color: transparent;
+  }
+  &right {
+    border: 1px solid #c5c2c2;
+    background-color: transparent;
+  }
+}
