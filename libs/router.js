@@ -1,7 +1,7 @@
 export class Router {
   constructor () {
     this.routes = {};
-    this.defaultRoute = null;
+    // this.defaultRoute = null;
   }
   register (route, view, isDefault = false) {
     this.routes[route] = view;
@@ -14,8 +14,10 @@ export class Router {
       this.activeRoute.toggle(false);
     }
     this.activeRoute = this.routes[route] || this.defaultRoute;
+
     this.activeRoute.toggle(true);
   }
+
   start () {
     this.onRoute(window.location.hash.replace('#', ''));
     window.addEventListener('hashchange', () => {
