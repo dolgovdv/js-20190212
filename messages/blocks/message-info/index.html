@@ -7,23 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="../../../dist/messages.js"></script>
     <link href="../../../libs/bemskel.min.css" rel="stylesheet"/>
-
-    <title>Letter</title>
+    <title>MessageInfo</title>
 </head>
 <body>
 <div class="js-letter"></div>
 <script>
     (function () {
-        const letter = new Letter({
+        const letter = new MessageInfo({
             title: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam, aliquid! Lorem ipsum dolor sit',
             emailFrom: 'burlakili@bk.ru',
             emailTo: 'burlakili@bk.ru',
-            time: '10 янв 2019',
-            hasAttach: false,
-            text: '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur quaerat itaque vitae assumenda vel magni illum, ut illo perferendis velit Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, nemo dignissimos? Quia ea similique debitis impedit odio minima architecto sunt.</p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur quaerat itaque vitae assumenda vel magni illum, ut illo perferendis velit Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, nemo dignissimos? Quia ea similique debitis impedit odio minima architecto sunt.</p>'
+            time: '10 янв 2019'
         });
         letter.render(document.querySelector('.js-letter'));
-    })()
+    })();
 </script>
 </body>
 </html>

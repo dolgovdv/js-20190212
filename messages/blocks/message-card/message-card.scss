@@ -5,11 +5,12 @@
   display: flex;
 
   padding: 8px 12px;
-  border-bottom: 1px solid darken(#FAF9F8, 5%);
-
-
-  &:first-child {
-    border-top: none;
+  border-top: 1px solid darken(#FAF9F8, 5%);
+  color: #1c1c1c;
+  transition: background-color .4s ease;
+  &:hover {
+    cursor: pointer;
+    background-color: darken(#FAF9F8, 5%);
   }
   &__avatar {
     display: flex;
@@ -26,7 +27,7 @@
     background-size: cover;
     font-size: 35px;
     color: #fff;
-    @media (max-width: 567px) {
+    @media (max-width: 750px) {
       display: none;
     }
   }

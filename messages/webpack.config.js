@@ -1,4 +1,4 @@
-const path = require('path')
+const path = require('path');
 
 module.exports = {
   entry: path.resolve('./messages/messages.js'),
@@ -8,7 +8,6 @@ module.exports = {
   },
   devtool: 'eval-source-map',
   module: {
-
     rules: [
       {
         test: /\.js$/,
