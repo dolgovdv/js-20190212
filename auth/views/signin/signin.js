@@ -1,26 +1,26 @@
 import { View } from '../view';
 import template from './signin.pug';
 
-import { SignupForm } from '../../blocks/signup/signup'
+import { SigninForm } from '../../blocks/signin/signin'
 
 /* eslint-disable */
 import _ from './signin.scss';
 /* eslint-enable */
 
-export class Signup extends View {
+export class Signin extends View {
   get bemName () {
-    return 'signup';
+    return 'signin';
   }
   template (data) {
     return template(data);
   }
   constructor () {
     super();
-    this.signupForm = new SignupForm();
+    this.signinForm = new SigninForm();
   }
   render (el) {
     super.render(el);
     console.log(this.getElement('form'))
-    this.signupForm.render(this.getElement('form'))
+    this.signinForm.render(this.getElement('form'))
   }
 }
