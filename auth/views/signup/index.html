@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <title>Signup: Форма регистрации</title>
+  <title>Signup: Форма аутентификации</title>
   <script src="../../../dist/auth.js"></script>
+    <link href="../../../libs/bemskel.min.css" rel="stylesheet"/>
 </head>
 
 <body>
-  <h1>Простой вариант формы регистрации</h1>
   <div class="js-signup"></div>
 
   <script>
@@ -16,7 +15,6 @@
       'use strict';
 
       const signup = new SignupForm();
-
       signup.render(document.querySelector('.js-signup'));
     })();
   </script>

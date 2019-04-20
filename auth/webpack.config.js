@@ -1,6 +1,11 @@
+const path = require('path');
+
+console.log(path.resolve('./dist'));
+
 module.exports = {
-  entry: './auth.js',
+  entry: path.resolve('./auth/auth.js'),
   output: {
+    path: path.resolve('./dist'),
     filename: 'auth.js'
   },
   devtool: 'eval-source-map',

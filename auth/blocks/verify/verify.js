@@ -5,7 +5,7 @@ import template from './verify.pug';
 import _ from './verify.scss';
 /* eslint-enable */
 
-export class Verify extends Block {
+export class VerifyForm extends Block {
   get bemName () {
     return 'verify';
   }
