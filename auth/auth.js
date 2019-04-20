@@ -21,10 +21,10 @@ window.addEventListener('DOMContentLoaded', () => {
   const router = new Router();
 
   verifyView.render(document.querySelector('.js-view-verify'));
-  signupView.render(document.querySelector('.js-view-signup'));
   signinView.render(document.querySelector('.js-view-signin'));
+  signupView.render(document.querySelector('.js-view-signup'));
   router.register('verify', verifyView);
-  router.register('signup', signupView);
   router.register('signin', signinView, true);
+  router.register('signup', signupView);
   router.start();
 })
