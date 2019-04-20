@@ -1,13 +1,13 @@
 import { View } from '../view';
 import template from './verify.pug';
 
-import { Verify } from '../../blocks/verify/verify'
+import { VerifyForm } from '../../blocks/verify/verify'
 
 /* eslint-disable */
 import _ from './verify.scss';
 /* eslint-enable */
 
-export class VerifyView extends View {
+export class Verify extends View {
   get bemName () {
     return 'verify';
   }
@@ -16,10 +16,10 @@ export class VerifyView extends View {
   }
   constructor () {
     super();
-    this.verify = new Verify();
+    this.verify = new VerifyForm();
   }
   render (el) {
     super.render(el);
-    this.veify.render(this.getElement('verify'))
+    this.verify.render(this.getElement('form'))
   }
 }
