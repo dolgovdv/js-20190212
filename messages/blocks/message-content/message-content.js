@@ -1,10 +1,11 @@
 import { Block } from '../../../blocks/block';
-import template from './letter-content.pug';
+import template from './message-content.pug';
 /* eslint-disable */
-import _ from './letter-content.scss';
+import _ from './message-content.scss';
+
 /* eslint-enable */
 
-export class LetterContent extends Block {
+export class MessageContent extends Block {
   template (data) {
     return template(data);
   }

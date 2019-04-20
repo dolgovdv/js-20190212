@@ -8,17 +8,17 @@
     <script src="../../../dist/messages.js"></script>
     <link href="../../../libs/bemskel.min.css" rel="stylesheet"/>
 
-    <title>Letter Content</title>
+    <title>MessageInfo Content</title>
 </head>
 <body>
 <div class="js-letter-content"></div>
 <script>
   (function () {
-    const content = new LetterContent({
+    const content = new MessageContent({
       text: '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur quaerat itaque vitae assumenda vel magni illum, ut illo perferendis velit Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, nemo dignissimos? Quia ea similique debitis impedit odio minima architecto sunt.</p><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur quaerat itaque vitae assumenda vel magni illum, ut illo perferendis velit Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, nemo dignissimos? Quia ea similique debitis impedit odio minima architecto sunt.</p>'
     });
     content.render(document.querySelector('.js-letter-content'));
-  })()
+  })();
 </script>
 </body>
 </html>
