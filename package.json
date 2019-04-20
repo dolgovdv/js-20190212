@@ -6,6 +6,7 @@
   "scripts": {
     "build": "webpack-cli --watch",
     "build:messages": "webpack-cli --watch --config ./messages/webpack.config.js",
+    "build:contacts": "webpack-cli --watch --config ./contacts/webpack.config.js",
     "lint": "eslint ./blocks/**/*.js",
     "lint:messages": "eslint ./messages/blocks/**/*.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -46,5 +47,8 @@
   "pre-commit": [
     "lint",
     "lint:messages"
-  ]
+  ],
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.8.1"
+  }
 }
