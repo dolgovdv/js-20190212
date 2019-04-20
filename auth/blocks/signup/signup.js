@@ -9,7 +9,7 @@ import template from './signup.pug';
 import _ from './signup.scss';
 /* eslint-enable */
 
-export class Signup extends Block {
+export class SignupForm extends Block {
   get bemName () {
     return 'signup';
   }
