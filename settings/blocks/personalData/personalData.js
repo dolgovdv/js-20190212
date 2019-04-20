@@ -59,7 +59,6 @@ export class PersonalData extends Block {
     this.userBirthday.render(this.getElement('user-birthday'));
     this.signature.render(this.getElement('signature'));
     this.submit.render(this.getElement('submit'));
-    console.log(this.el);
     this.el.addEventListener('submit', event => {
       event.preventDefault();
       console.log(this.userSurname.value, this.userName.value, this.userBirthday.value);

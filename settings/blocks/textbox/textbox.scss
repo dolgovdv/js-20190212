@@ -1,10 +1,10 @@
-.textbox {
-  &__input {}
-}
-
 .required{
   color: red;
   margin-left: .5rem;
+}
+
+.error{
+  background-color: #ffa3a0 !important;
 }
 
 label{

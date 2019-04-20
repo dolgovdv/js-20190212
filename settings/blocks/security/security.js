@@ -51,7 +51,6 @@ export class Security extends Block {
     this.newPassword.render(this.getElement('new-password'));
     this.newPasswordRepeat.render(this.getElement('new-password-repeat'));
     this.submit.render(this.getElement('submit'));
-    console.log(this.el);
     this.el.addEventListener('submit', event => {
       event.preventDefault();
       console.log(this.oldPassword.value, this.newPassword.value, this.newPasswordRepeat.value);
