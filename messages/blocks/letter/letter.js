@@ -1,5 +1,4 @@
 import { Block } from '../../../blocks/block';
-import { Content } from '../content/content';
 import template from './letter.pug';
 /* eslint-disable */
 import _ from './letter.scss';
@@ -12,12 +11,9 @@ export class Letter extends Block {
   template (data) {
     return template(data);
   }
-  constructor (options) {
-    super(options);
-    this.content = new Content({
-      text: options.text
-    });
-  }
+  // constructor (options) {
+  //   super(options);
+  // }
   render (el) {
     super.render(el);
     this.content.render(this.getElement('content'));
