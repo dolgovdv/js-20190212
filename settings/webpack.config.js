@@ -1,5 +1,7 @@
+const path = require('path');
+
 module.exports = {
-  entry: './settings/blocks/index.js',
+  entry: path.resolve('./settings/settings.js'),
   output: {
     filename: 'toolkit_settings.js'
   },
