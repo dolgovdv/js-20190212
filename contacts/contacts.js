@@ -15,7 +15,7 @@ window.addEventListener('DOMContentLoaded', () => {
   const listView = new List();
   const router = new Router();
 
-  cardView.render(document.querySelector('.js-view-message-card'));
+  cardView.render(document.querySelector('.js-view-card'));
   listView.render(document.querySelector('.js-view-contacts'));
   router.register('contacts', listView, true);
   router.register('card', cardView);

@@ -6,7 +6,7 @@ import _ from './contact-card.scss';
 
 export class ContactCard extends Block {
   get bemName () {
-    return 'contact-message-card';
+    return 'contact-card';
   }
   template (data) {
     return template(data);
