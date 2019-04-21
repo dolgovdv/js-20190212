@@ -13,12 +13,10 @@ export class Textbox extends Block {
   }
   get value () {
     if (this.options.required && this.getElement('input').value === '') {
-      this.getElement('input').classList.add('error');
+      this.getElement('input').classList.toggle('textbox__input_error', true);
       return false;
     }
-    if (this.getElement('input').classList.contains('error')) {
-      this.getElement('input').classList.remove('error');
-    }
+    this.getElement('input').classList.toggle('textbox__input_error', false);
     return this.getElement('input').value;
   }
 }
