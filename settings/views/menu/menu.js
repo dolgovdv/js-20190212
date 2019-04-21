@@ -1,10 +1,10 @@
-import {
-  SettingsMenu
-} from '../../blocks/settingsmenu/settingsmenu';
-import {
-  View
-} from '../view';
+import { SettingsMenu } from '../../blocks/settingsmenu/settingsmenu';
+import { View } from '../view';
 import template from './menu.pug';
+
+/* eslint-disable */
+import _ from './menu.scss';
+/* eslint-enable */
 
 export class Menu extends View {
   get bemName () {
