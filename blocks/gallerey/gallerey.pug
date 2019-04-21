@@ -6,16 +6,15 @@ if inLine
         .inLine__wrap#inLine__wrap
           - for (var x = 1; x <= size; x++)
             .inLine__item
-              img(src='./img/img1.png' alt='')
-              span.title описание
+              img(src='./img/img2.png' alt='')
       button.btn__right#btn__right >
-//- if !inLine
-//-   .galarey__row#galarey__row
-//-     if !inLine
-//-       .inRow#inRow
-//-         .inRow__wrap#inRow__wrap
-//-           - for (var x = 1; x <= size; x++)
-//-             img(src='./img/img1.png' alt='')
-//-       .inRow__btn
-//-         button.btn__more#btn__more показать еще
-//-         button.btn__hidden#btn__hidden скрыть
+if !inLine
+  .galarey__row#galarey__row
+    if !inLine
+      .inRow#inRow
+        .inRow__wrap#inRow__wrap
+          - for (var x = 1; x <= size; x++)
+            img(src='./img/img2.png' alt='')
+      .inRow__btn
+        button.btn__more#btn__more показать еще
+        button.btn__hidden#btn__hidden скрыть

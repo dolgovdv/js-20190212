@@ -16,9 +16,11 @@
         (function() {
             'use strict';
             const myGallerey = new Gallerey({
-                inLine : true, /* в строку */
-                inLineElem : 3,/* кол-во видимых элементов */
-                size : 14/* кол-во элементов */
+                inLine : true,  /* true если в строку, иначе плитка*/
+                itemAmount: 3,  /* количество видимых элементов*/
+                size: 10, /* общее кол-во элементов*/
+                width: 200, /* ширина элемента*/
+                height: 200 /* высота элемента*/
             });
             myGallerey.render(document.querySelector('.js-gallerey'));
         })();
