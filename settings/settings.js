@@ -5,6 +5,7 @@ import { SettingsForm } from './blocks/settingsform/settingsform';
 import { Textareabox } from './blocks/textareabox/textareabox';
 import { Textbox } from './blocks/textbox/textbox';
 import { SettingsMenu } from './blocks/settingsmenu/settingsmenu'
+import { Datebox } from './blocks/datebox/datebox'
 
 import { Router } from './../libs/router';
 import { SecurityForm } from './views/security-form/security-form';
@@ -22,6 +23,7 @@ window.SettingsForm = SettingsForm;
 window.Textareabox = Textareabox;
 window.Textbox = Textbox;
 window.SettingsMenu = SettingsMenu;
+window.Datebox = Datebox;
 
 window.addEventListener('DOMContentLoaded', () => {
   const securityFrom = new SecurityForm();
