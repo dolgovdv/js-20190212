@@ -8,7 +8,7 @@ import _ from './email-helper.scss';
 
 export class EmailHelper extends Block {
   get bemName () {
-    return 'email-helper';
+    return 'helper';
   }
   template (data) {
     return template(data);
@@ -27,56 +27,58 @@ export class EmailHelper extends Block {
       required: false
     });
 
-    // this.el = document.createElement('div');
-    // this.el.style.position = 'absolute';
-    // this.el.classList.add(this.bemName);
-    // this.el.classList.toggle(`${this.bemName}_active`, false);
-    // console.log('constructor', this.el);
-    // document.body.appendChild(this.el);
+    this.helper = document.createElement('div');
+    this.helper.style.position = 'absolute';
+    this.helper.classList.add(this.bemName);
+    this.helper.classList.toggle(`${this.bemName}_active`, false);
+    console.log('constructor');
+    document.querySelector('.email-helper__email').appendChild(this.helper);
 
-    // this.onShowList = this.onShowList.bind(this);
-    // this.onHideList = this.onHideList.bind(this);
+    this.onShowList = this.onShowList.bind(this);
+    this.onHideList = this.onHideList.bind(this);
   }
 
-  // delegate (eventName, element, cssSelector, callback) {
-  //   let fn = event => {
-  //     if (!event.target.matches(cssSelector)) {
-  //       return;
-  //     }
-  //     callback(event);
-  //   };
+  delegate (eventName, element, cssSelector, callback) {
+    let fn = event => {
+      if (!event.target.matches(cssSelector)) {
+        return;
+      }
+      callback(event);
+    };
 
-  //   element.addEventListener(eventName, fn);
+    element.addEventListener(eventName, fn);
 
-  //   return this;
-  // }
+    return this;
+  }
 
-  // onShowList (event) {
-  //   this.el.innerHTML = 'Привет';
-  //   this.el.classList.toggle(`${this.bemName}_active`, true);
+  onShowList (event) {
+    event.preventDefault();
+    this.el.innerHTML = 'Привет';
+    this.el.classList.toggle(`${this.bemName}_active`, true);
 
-  //   let spanRect = event.target.getBoundingClientRect();
-  //   let elRect = this.el.getBoundingClientRect();
+    let spanRect = event.target.getBoundingClientRect();
+    let elRect = this.el.getBoundingClientRect();
 
-  //   this.el.style.left = `${spanRect.left}px`
+    this.el.style.left = `${spanRect.left}px`
 
-  //   let top = spanRect.bottom + this.indent;
-  //   if (top + elRect.height > document.documentElement.clientHeight) {
-  //     top = spanRect.top - elRect.height - this.indent;
-  //   }
-  //   console.log('call onShowList');
+    let top = spanRect.bottom + this.indent;
+    if (top + elRect.height > document.documentElement.clientHeight) {
+      top = spanRect.top - elRect.height - this.indent;
+    }
+    console.log('call onShowList');
 
-  //   this.el.style.top = `${top}px`;
-  // }
-  // onHideList () {
-  //   this.el.classList.toggle(`${this.bemName}_active`, false);
-  //   console.log('call onHideList');
-  // }
+    this.el.style.top = `${top}px`;
+  }
+  onHideList () {
+    this.el.classList.toggle(`${this.bemName}_active`, false);
+    console.log('call onHideList');
+  }
+
   render (el) {
     super.render(el);
-    console.log('render');
     this.email.render(this.getElement('email'));
-    // this.delegate('click', this.el, '[data-tooltip]', this.onShowList);
+    console.log('render');
+    this.delegate('click', this.el, '[data-tooltip]', this.onShowList);
     // this.delegate('click', document.body, '[data-tooltip]', this.onHideList);
   }
 }
