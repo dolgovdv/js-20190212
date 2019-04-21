@@ -11,12 +11,19 @@ export class Textbox extends Block {
   template (data) {
     return template(data);
   }
+  render (el) {
+    super.render(el);
+    if (this.options.required) {
+      this.getElement('input').classList.toggle('textbox__input_required', true);
+    }
+  }
   get value () {
-    if (this.options.required && this.getElement('input').value === '') {
-      this.getElement('input').classList.toggle('textbox__input_error', true);
+    this.input = this.getElement('input').firstElementChild;
+    if (this.options.required && this.input.value === '') {
+      this.input.classList.toggle('textbox__input_error', true);
       return false;
     }
-    this.getElement('input').classList.toggle('textbox__input_error', false);
-    return this.getElement('input').value;
+    this.input.classList.toggle('textbox__input_error', false);
+    return this.input.value;
   }
 }
