@@ -1,3 +1,4 @@
+import { View } from "./views/view";
 import { MessageCard } from "./blocks/message-card/message-card";
 import { Search } from "./blocks/search/search";
 import { MessageInfo } from "./blocks/message-info/message-info";
@@ -51,6 +52,12 @@ window.addEventListener('DOMContentLoaded', () => {
 
     sidebarView.render(document.querySelector('.js-inbox-sidebar'));
     messageView.render(document.querySelector('.js-inbox-message'));
+
+    const search = document.querySelector('.search');
+    const cards = document.querySelectorAll('.card');
+    const containerCards = document.querySelector('.sidebar__cards');
+    sidebarView.initFilter(search, cards, containerCards);
+
     router.register('messages', sidebarView, true);
     router.register('message', messageView, false);
     router.start();

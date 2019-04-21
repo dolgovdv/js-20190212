@@ -29,29 +29,32 @@ export class Sidebar extends View {
       });
     }
   }
-  // filter () {
-  //   let input = document.getElementsByTagName('input')[0]
-  //   input.onkeyup = () => {
-  //     let input = document.querySelector('.search__input');
-  //     let filter = input.value.toUpperCase();
-  //     let mainCard = document.querySelector('.sidebar__card')
-  //     let childrenDiv = mainCard.querySelectorAll('.message-card')
-  //     for (let i = 0; i < childrenDiv.length;i++) {
-  //       let text = childrenDiv[i].innerText
-  //
-  //       if (text.toUpperCase().indexOf(filter) > -1) {
-  //         childrenDiv[i].style.display = '';
-  //       } else {
-  //         childrenDiv[i].style.display = 'none';
-  //       }
-  //     }
-  //   }
-  // }
   render (el) {
     if (!el) return;
 
     super.render(el);
     this.search.render(this.getElement('search'));
     this.card.render(this.getElement('cards'));
+  }
+  /**
+   * Метод инициализации сортировки
+   *
+   * @param input [HTMLDivElement] – поле ввода фильтрации
+   * @param list [NodeList] – элементы, которые должны сортироваться
+   * @param container [HTMLDivElement] – элемент, куда должен выводиться результат
+   *
+   * */
+  initFilter (input, list, container) {
+
+    const search = this.search;
+    input.addEventListener('input', this.debounce(function (event) {
+      if (!event.target.matches('input')) return;
+
+      container.innerHTML = '';
+      const foundEls = search.find('.js-find-matches', event.target.value, list);
+      foundEls.forEach(el => {
+        container.appendChild(el);
+      })
+    }));
   }
 }
