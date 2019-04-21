@@ -33,7 +33,6 @@ export class Gallerey extends Block {
     const inRowGallerey = document.getElementById('inRow__wrap');
     let heightCoord = itemHeight;
     if (inLine) {
-      widthGallerey.style.display = 'flex';
       widthGallerey.style.width = itemWidth * itemAmount + 'px';
       if (itemAmount >= size) {
         const btnLeft = document.getElementById('btn__left');
