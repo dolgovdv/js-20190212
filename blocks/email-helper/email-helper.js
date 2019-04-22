@@ -8,17 +8,13 @@ import _ from './email-helper.scss';
 
 export class EmailHelper extends Block {
   get bemName () {
-    return 'helper';
+    return 'email-helper';
   }
   template (data) {
     return template(data);
   }
-  get value () {
-    return this.getElement('input').value;
-  }
   constructor (options) {
     super(options);
-
     this.email = new Textbox({
       name: 'email',
       label: 'Введите email',
@@ -29,10 +25,7 @@ export class EmailHelper extends Block {
 
     this.helper = document.createElement('div');
     this.helper.style.position = 'absolute';
-    this.helper.classList.add(this.bemName);
-    this.helper.classList.toggle(`${this.bemName}_active`, false);
-    console.log('constructor');
-    document.querySelector('.email-helper__email').appendChild(this.helper);
+    this.helper.classList.add(`${this.bemName}__list`);
 
     this.onShowList = this.onShowList.bind(this);
     this.onHideList = this.onHideList.bind(this);
@@ -52,25 +45,28 @@ export class EmailHelper extends Block {
   }
 
   onShowList (event) {
-    event.preventDefault();
-    this.el.innerHTML = 'Привет';
-    this.el.classList.toggle(`${this.bemName}_active`, true);
-
+    this.list = document.createElement('ul');
+    // this.helper.innerHTML = 'Привет';
     let spanRect = event.target.getBoundingClientRect();
-    let elRect = this.el.getBoundingClientRect();
-
-    this.el.style.left = `${spanRect.left}px`
-
-    let top = spanRect.bottom + this.indent;
+    let elRect = this.helper.getBoundingClientRect();
+    this.helper.style.left = `${spanRect.left + 10}px`
+    let top = spanRect.bottom;
     if (top + elRect.height > document.documentElement.clientHeight) {
-      top = spanRect.top - elRect.height - this.indent;
+      top = spanRect.top - elRect.height;
     }
     console.log('call onShowList');
+    this.helper.style.top = `${top}px`;
 
-    this.el.style.top = `${top}px`;
+    this.email1 = document.createElement('li');
+    this.email1.innerHTML = 'alexey.khabarov';
+    this.email2 = document.createElement('li');
+    this.email2.innerHTML = 'example';
+    this.list.appendChild(this.email1);
+    this.list.appendChild(this.email2);
+    this.helper.appendChild(this.list);
   }
   onHideList () {
-    this.el.classList.toggle(`${this.bemName}_active`, false);
+    this.helper.style.display = 'none';
     console.log('call onHideList');
   }
 
@@ -78,7 +74,19 @@ export class EmailHelper extends Block {
     super.render(el);
     this.email.render(this.getElement('email'));
     console.log('render');
-    this.delegate('click', this.el, '[data-tooltip]', this.onShowList);
+    document.querySelector('.email-helper__email').appendChild(this.helper);
+    // this.el.querySelector('form').addEventListener('click', event => {
+    //   event.preventDefault();
+    //   console.log(this.email);
+    // })
+    // this.delegate('click', this.email, '[data-tooltip]', this.onShowList);
     // this.delegate('click', document.body, '[data-tooltip]', this.onHideList);
+    console.log(this.email);
+    // this.email.addEventListener('click', this.onShowList);
+    // document.body.addEventListener('click', this.onHideList);
+    document.body.querySelectorAll('.textbox__input').forEach((elem) => {
+      elem.addEventListener('click', this.onShowList);
+      // document.body.addEventListener('click', elem.onHideList);
+    });
   }
 }
