@@ -3,6 +3,7 @@
 Создание нового компонента
 ------------------------------
 Пример использования:
+``` javascript
 const PhoneComponent = New Phonenumber (
 {
   name: 'phonenumber',
@@ -11,6 +12,7 @@ const PhoneComponent = New Phonenumber (
   required: true
 }
 )
+```
 поля не обязательные
 
 Информация  по компоненту
