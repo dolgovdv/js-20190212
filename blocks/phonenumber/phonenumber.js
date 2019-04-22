@@ -17,19 +17,17 @@ export class Phonenumber extends Block {
   constructor (options) {
     super(options);
     this.isError = true;
+    if (options.name === undefined) {
+      options.name = 'phonenumber'
+    }
 
-    this.phonenumber = new PhoneField({
-      name: 'phonenumber',
-      label: 'Телефонный номер',
-      placeholder: '8-999-9999999',
-      value: '',
-      required: true
-    });
+    this.phonenumber = new PhoneField(options);
   }
 
   render (el) {
     super.render(el);
     this.phonenumber.render(this.getElement('phonenumber'));
+    let self = this
 
     this.el.querySelector('form').addEventListener('submit', event => {
       event.preventDefault();
@@ -44,19 +42,28 @@ export class Phonenumber extends Block {
       }
 
       this.el.querySelector('input').classList.add('errorPhone');
-      let spanMassage = this.el.querySelector('.form-message-inline');
-      spanMassage.textContent = 'invalid phone number'
-      spanMassage.classList.add('errorPhone')
+      let errorMessage = this.el.querySelector('span.form-message-inline.errorPhone');
+      errorMessage.style.display = 'inline'
+
+      console.log(self.options);
+
+      if (self.options.required) {
+        let requiredMessage = this.el.querySelector('span.form-message-inline.required');
+        requiredMessage.style.display = 'none'
+      }
       this.isError = true;
-      console.log(this.isError)
+
       event.preventDefault();
     })
 
     this.el.querySelector('input').addEventListener('focus', () => {
       this.el.querySelector('input').classList.remove('errorPhone');
-      let spanMassage = this.el.querySelector('.form-message-inline');
-      spanMassage.textContent = 'Обязательное поле'
-      spanMassage.classList.remove('errorPhone')
+      let errorMessage = this.el.querySelector('span.form-message-inline.errorPhone');
+      errorMessage.style.display = 'none'
+      if (self.options.required) {
+        let requiredMessage = this.el.querySelector('span.form-message-inline.required');
+        requiredMessage.style.display = 'inline'
+      }
       this.isError = false;
     })
 
