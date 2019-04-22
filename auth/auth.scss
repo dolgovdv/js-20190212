@@ -52,22 +52,3 @@
   margin: 0 auto;
   display: block;
 }
-
-.formRedirect-button {
-  text-align: center;
-  margin-top: 20px;
-  padding: .5em 1em;
-  color: #0078e7;
-  text-decoration: none;
-  display: block;
-  width: 100px;
-  margin: 0 auto;
-  border: 1px solid #0078e7;
-  background: transparent;
-  transition: .3s;
-
-  &:hover {
-    color: #fff;
-    background: #0078e7;
-  }
-}
