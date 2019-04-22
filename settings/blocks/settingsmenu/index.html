@@ -7,15 +7,16 @@
 </head>
 <body>
     <h1>Меню</h1>
-    <div class="menu"></div>
+    <div class="menu2"></div>
     <script>
         (function () {
             'use strict';
             const settingsMenu = new SettingsMenu();
             settingsMenu.addItem({href : '#persondata', text : 'Личные данные'});
-            settingsMenu.addItem({href : '#security', text : 'Безопасность', active : true});
+            settingsMenu.addItem({href : '#security', text : 'Безопасность'});
             settingsMenu.addItem({href : '#theme', text : 'Тема'});
-            settingsMenu.render(document.querySelector('.menu'));
+            settingsMenu.render(document.querySelector('.menu2'));
+            settingsMenu.setActive('#persondata');
         })();
 </script>
 </body>

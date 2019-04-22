@@ -31,5 +31,6 @@ export class Menu extends View {
       text: 'Безопасность'
     });
     this.settingsMenu.render(this.getElement('place'));
+    this.settingsMenu.setActive('#persondata');
   }
 }
