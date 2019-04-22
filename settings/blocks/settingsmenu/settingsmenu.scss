@@ -1,6 +1,7 @@
 .settings-menu {
-   list-style-type : none
+   list-style-type : none;
  }
 .settings-menu__item_active{
-  color: black
+  color: black;
+  pointer-events: none;
 }
