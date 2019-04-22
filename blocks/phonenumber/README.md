@@ -4,21 +4,23 @@
 ------------------------------
 Пример использования:
 ``` javascript
-const PhoneComponent = New Phonenumber (
-{
-  name: 'phonenumber',
-  label: 'Телефонный номер',
-  placeholder: '8-999-9999999',
-  required: true
-}
+const PhoneComponent = New Phonenumber(
+  {
+    name: 'phonenumber',
+    label: 'Телефонный номер',
+    placeholder: '8-999-9999999',
+    required: true
+  }
 )
 ```
 поля не обязательные
 
 Информация  по компоненту
 ---------------------------
-PhoneComponent.isError = true -  ошибка валидации, номер не введет или введен не верно
+PhoneComponent.isError = true -  ошибка валидации, номер не введет или введен не верно.
+
 Также в форму добавляется класс errorPhone в форму, когда валидция зафейлилась.
+
 
 Валидация номера происходит на расфокусеровке формы.
 Форма поддердивает ввод только цифр.
