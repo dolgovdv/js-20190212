@@ -6,6 +6,8 @@ import { Textareabox } from './blocks/textareabox/textareabox';
 import { Textbox } from './blocks/textbox/textbox';
 import { SettingsMenu } from './blocks/settingsmenu/settingsmenu'
 import { Datebox } from './blocks/datebox/datebox'
+import { Galarey } from './blocks/galarey/galarey';
+import { Imagebox } from './blocks/imagebox/imagebox'
 
 import { Router } from './../libs/router';
 import { SecurityForm } from './views/security-form/security-form';
@@ -24,6 +26,8 @@ window.Textareabox = Textareabox;
 window.Textbox = Textbox;
 window.SettingsMenu = SettingsMenu;
 window.Datebox = Datebox;
+window.Galarey = Galarey;
+window.Imagebox = Imagebox;
 
 window.addEventListener('DOMContentLoaded', () => {
   const securityFrom = new SecurityForm();
