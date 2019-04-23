@@ -11,11 +11,11 @@ export class View extends Block {
   debounce (func, wait = 20, immediate = true) {
     let timeout;
 
-    return function() {
-      const context = this,
-          args = arguments;
+    return function () {
+      const context = this;
+      const args = arguments;
 
-      const later = function() {
+      const later = function () {
         timeout = null;
         if (!immediate) func.apply(context, args);
       };
