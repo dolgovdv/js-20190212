@@ -1,7 +1,9 @@
+const path = require('path');
+
 module.exports = {
-  entry: './blocks/index.js',
+  entry: path.resolve('./settings/settings.js'),
   output: {
-    filename: 'toolkit.js'
+    filename: 'toolkit_settings.js'
   },
   devtool: 'eval-source-map',
   module: {
